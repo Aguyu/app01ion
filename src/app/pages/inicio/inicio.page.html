@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>
+          Inicio de Sesión
+        </ion-label>
+      </ion-item-divider>
+  
+      <ion-item>
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Usuario: </ion-label>
+        <ion-input placeholder="Usuario"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-label>Contraseña: </ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+    
+  <ion-row>
+    <ion-col width-50 style="text-align: center">
+      <ion-button>Ingresar</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>
+          Páginas
+        </ion-label>
+      </ion-item-divider>
+  
+      <ion-item *ngFor="let c of componentes"
+    [routerLink] ="c.redirectTo" detail>
+        <ion-icon [name] = "c.icon"></ion-icon>
+        <ion-label> {{ c.name }} </ion-label>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+  
+</ion-content>
+
+  
+  <!--<ion-button color="secondary" routerLink="/alert">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+        Alert
+  </ion-button> 
+
+  <ion-content>
+    <ion-button color="primary" routerLink="/action-sheet">
+          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+          Action Sheet
+    </ion-button>
+</ion-content> -->
